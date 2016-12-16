@@ -22,6 +22,7 @@
     </dependencies>
 
     <properties>
+        <env>dev</env>
         <java.version>1.8</java.version>
     </properties>
 
