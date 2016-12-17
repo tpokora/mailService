@@ -5,8 +5,16 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.tpokora</groupId>
-    <artifactId>mailService</artifactId>
+    <artifactId>mailservice</artifactId>
     <version>1.0-SNAPSHOT</version>
+
+    <properties>
+        <env>dev</env>
+        <java.version>1.8</java.version>
+        <junit.version>4.12</junit.version>
+        <spring-boot.version>1.4.2.RELEASE</spring-boot.version>
+        <javax-mail.version>1.4.7</javax-mail.version>
+    </properties>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -15,16 +23,34 @@
     </parent>
 
     <dependencies>
+        <!-- Spring dependencies -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
-    </dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-mail</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>javax.mail</groupId>
+            <artifactId>mail</artifactId>
+            <version>${javax-mail.version}</version>
+        </dependency>
+        <!-- Dependencies fo tests -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
 
-    <properties>
-        <env>dev</env>
-        <java.version>1.8</java.version>
-    </properties>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>${junit.version}</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
 
     <build>
         <plugins>

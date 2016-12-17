@@ -23,6 +23,9 @@ buildSrc/build
 target/
 *loc.properties
 
+dev.properties
+loc.properties
+
 # Eclipse artifacts, including WTP generated manifests
 .classpath
 .project

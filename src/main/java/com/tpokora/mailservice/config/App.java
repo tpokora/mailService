@@ -1,4 +1,4 @@
-package com.tpokora.mailService.config;
+package com.tpokora.mailservice.config;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
@@ -9,7 +9,7 @@ import org.springframework.context.annotation.ComponentScan;
  * Created by pokor on 16.12.2016.
  */
 @SpringBootApplication
-@ComponentScan(basePackages = { "com.tpokora.mailService" })
+@ComponentScan(basePackages = { "com.tpokora.mailservice" })
 @EnableAutoConfiguration
 public class App {
 
