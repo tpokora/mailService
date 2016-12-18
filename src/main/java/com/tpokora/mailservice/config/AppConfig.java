@@ -1,5 +1,6 @@
 package com.tpokora.mailservice.config;
 
+import com.tpokora.mailservice.email.EmailHtmlSender;
 import com.tpokora.mailservice.email.EmailSender;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -13,5 +14,10 @@ public class AppConfig {
     @Bean(name = "emailSender")
     public EmailSender getEmailSender() {
         return new EmailSender();
+    }
+
+    @Bean(name = "emailHtmlSender")
+    public EmailHtmlSender getEmailHtmlSender() {
+        return new EmailHtmlSender();
     }
 }
