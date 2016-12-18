@@ -1,4 +1,4 @@
-package com.tpokora.mailservice.email;
+package com.tpokora.mailservice.email.sender;
 
 /**
  * Created by pokor on 17.12.2016.

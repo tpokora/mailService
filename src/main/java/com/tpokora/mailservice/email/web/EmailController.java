@@ -1,7 +1,7 @@
 package com.tpokora.mailservice.email.web;
 
-import com.tpokora.mailservice.email.EmailHtmlSender;
-import com.tpokora.mailservice.email.EmailStatus;
+import com.tpokora.mailservice.email.sender.EmailHtmlSender;
+import com.tpokora.mailservice.email.sender.EmailStatus;
 import com.tpokora.mailservice.email.model.EmailSendStatusResponse;
 import com.tpokora.mailservice.email.model.SendMailForm;
 import org.slf4j.Logger;

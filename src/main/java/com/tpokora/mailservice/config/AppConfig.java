@@ -1,7 +1,7 @@
 package com.tpokora.mailservice.config;
 
-import com.tpokora.mailservice.email.EmailHtmlSender;
-import com.tpokora.mailservice.email.EmailSender;
+import com.tpokora.mailservice.email.sender.EmailHtmlSender;
+import com.tpokora.mailservice.email.sender.EmailSender;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 

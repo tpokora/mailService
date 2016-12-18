@@ -1,4 +1,4 @@
-package com.tpokora.mailservice.email;
+package com.tpokora.mailservice.email.sender;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
