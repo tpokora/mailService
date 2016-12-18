@@ -20,13 +20,21 @@ public class EmailSender {
     @Autowired
     private JavaMailSender javaMailSender;
 
-    public EmailStatus sendEmail(String to, String subject, String text) {
+    public EmailStatus sendText(String to, String subject, String text) {
+        return sendEmail(to, subject, text, false);
+    }
+
+    public EmailStatus sendHtml(String to, String subject, String htmlBody) {
+        return sendEmail(to, subject, htmlBody, true);
+    }
+
+    private EmailStatus sendEmail(String to, String subject, String text, boolean isHtml) {
         try {
             MimeMessage mail = javaMailSender.createMimeMessage();
             MimeMessageHelper helper = new MimeMessageHelper(mail, true);
             helper.setTo(to);
             helper.setSubject(subject);
-            helper.setText(text, false);
+            helper.setText(text, isHtml);
             javaMailSender.send(mail);
             logger.info("Send mail '{}' to: '{}'", subject, to);
             return new EmailStatus(to, subject, text).success();
