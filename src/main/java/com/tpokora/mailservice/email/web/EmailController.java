@@ -1,5 +1,7 @@
 package com.tpokora.mailservice.email.web;
 
+import com.tpokora.mailservice.email.Email;
+import com.tpokora.mailservice.email.EmailFactory;
 import com.tpokora.mailservice.email.sender.EmailHtmlSender;
 import com.tpokora.mailservice.email.sender.EmailStatus;
 import com.tpokora.mailservice.email.model.EmailSendStatusResponse;
@@ -13,7 +15,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
-import org.thymeleaf.context.Context;
 
 /**
  * Created by pokor on 17.12.2016.
@@ -31,11 +32,8 @@ public class EmailController {
     public ResponseEntity<EmailSendStatusResponse> hello(@RequestBody SendMailForm sendMailForm) throws Exception {
         logger.info("Sending email to reset password to: '{}'", sendMailForm.getTo());
 
-        Context context = new Context();
-        context.setVariable("title", "test");
-        context.setVariable("description", "test description");
-
-        EmailStatus emailStatus = emailHtmlSender.send(sendMailForm.getTo(), sendMailForm.getType(), "email/resetPasswordEmail", context);
+        Email email = new Email(sendMailForm);
+        EmailStatus emailStatus = emailHtmlSender.send(email);
 
         EmailSendStatusResponse emailSendStatusResponse = new EmailSendStatusResponse(sendMailForm.getTo(), emailStatus.getStatus());
         return new ResponseEntity<EmailSendStatusResponse>(emailSendStatusResponse, HttpStatus.OK);
