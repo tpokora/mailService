@@ -1,7 +1,6 @@
 package com.tpokora.mailservice.email.web;
 
 import com.tpokora.mailservice.email.Email;
-import com.tpokora.mailservice.email.EmailFactory;
 import com.tpokora.mailservice.email.sender.EmailHtmlSender;
 import com.tpokora.mailservice.email.sender.EmailStatus;
 import com.tpokora.mailservice.email.model.EmailSendStatusResponse;
