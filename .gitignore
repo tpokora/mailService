@@ -41,6 +41,6 @@ test-output
 atlassian-ide-plugin.xml
 .gradletasknamecache
 
-node_modules
-*.js
-*.js.map
+#node_modules
+#*.js
+#*.js.map
