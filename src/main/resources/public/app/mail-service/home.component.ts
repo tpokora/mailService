@@ -5,6 +5,7 @@ import { MailServiceHomeService } from './home.service'
     selector: 'home',
     template: `
         <button (click)="getHome()">GET mail-service home content</button>
+        <button (click)="clear()">Clear mail-service home content</button>
         <h2>{{ mailService.title }}</h2>
         <h3>{{ mailService.header }}</h3>
         `,
@@ -22,5 +23,9 @@ export class HomeComponent {
             error => alert(error),
             () => console.log("Finished")
             );
+    }
+
+    clear() {
+        this.mailService = {}
     }
 }
