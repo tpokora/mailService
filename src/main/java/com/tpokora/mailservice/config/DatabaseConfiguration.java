@@ -6,7 +6,8 @@ package com.tpokora.mailservice.config;
 
 import javax.sql.DataSource;
 
-import com.tpokora.mailservice.email.EmailStatusEntity;
+import com.tpokora.mailservice.email.dao.EmailStatusRepository;
+import com.tpokora.mailservice.email.model.EmailStatusEntity;
 import org.hibernate.SessionFactory;
 import org.hibernate.jpa.HibernatePersistenceProvider;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,6 +27,7 @@ import java.util.Properties;
 @Configuration
 @EnableTransactionManagement
 @EnableJpaRepositories(basePackageClasses = {
+        EmailStatusRepository.class
 })
 @PropertySource("classpath:properties/${env:dev}.properties")
 public class DatabaseConfiguration {

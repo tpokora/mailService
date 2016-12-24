@@ -1,4 +1,4 @@
-package com.tpokora.mailservice.email;
+package com.tpokora.mailservice.email.model;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.tpokora.mailservice.common.model.AbstractEntity;
