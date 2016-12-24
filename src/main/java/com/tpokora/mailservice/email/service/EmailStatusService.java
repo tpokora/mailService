@@ -9,4 +9,6 @@ import java.util.List;
  */
 public interface EmailStatusService {
     public List<EmailStatusEntity> getAllEmailStatuses();
+    public EmailStatusEntity saveEmailStatus(EmailStatusEntity emailStatusEntity);
+    public List<EmailStatusEntity> getEmailStatusesByEmail(String email);
 }

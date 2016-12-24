@@ -20,4 +20,14 @@ public class EmailStatusServiceImpl implements EmailStatusService {
     public List<EmailStatusEntity> getAllEmailStatuses() {
         return emailStatusRepo.findAll();
     }
+
+    @Override
+    public EmailStatusEntity saveEmailStatus(EmailStatusEntity emailStatusEntity) {
+        return emailStatusRepo.saveAndFlush(emailStatusEntity);
+    }
+
+    @Override
+    public List<EmailStatusEntity> getEmailStatusesByEmail(String email) {
+        return emailStatusRepo.findByEmail(email);
+    }
 }

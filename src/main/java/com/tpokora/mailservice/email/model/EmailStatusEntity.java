@@ -16,8 +16,8 @@ import java.util.Date;
 
 public class EmailStatusEntity extends AbstractEntity {
 
-    @Column(name = "mail")
-    private String mail;
+    @Column(name = "email")
+    private String email;
 
     @Column(name = "action")
     private String action;
@@ -33,19 +33,27 @@ public class EmailStatusEntity extends AbstractEntity {
         super();
     }
 
-    public EmailStatusEntity(Integer id, String mail, String action, String status, Date date) {
-        this.mail = mail;
+    public EmailStatusEntity(Integer id, String email, String action, String status, Date date) {
+        super(id);
+        this.email = email;
         this.action = action;
         this.status = status;
         this.date = date;
     }
 
-    public String getMail() {
-        return mail;
+    public EmailStatusEntity(String email, String action, String status, Date date) {
+        this.email = email;
+        this.action = action;
+        this.status = status;
+        this.date = date;
     }
 
-    public void setMail(String mail) {
-        this.mail = mail;
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String mail) {
+        this.email = email;
     }
 
     public String getAction() {
