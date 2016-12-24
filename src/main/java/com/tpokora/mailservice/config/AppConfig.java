@@ -16,16 +16,6 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 @Configuration
 public class AppConfig {
 
-    @Bean(name = "emailSender")
-    public EmailSender getEmailSender() {
-        return new EmailSender();
-    }
-
-    @Bean(name = "emailHtmlSender")
-    public EmailHtmlSender getEmailHtmlSender() {
-        return new EmailHtmlSender();
-    }
-
     // Service classes beans
     @Bean(name = "emailStatusService")
     public EmailStatusService getEmailStatusService() {
