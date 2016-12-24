@@ -1,31 +1,28 @@
 import { Component } from 'angular2/core'
 import { MailServiceHomeService } from './home.service'
+import { HomeJSON } from './home.model'
 
 @Component({
     selector: 'home',
-    template: `
-        <button (click)="getHome()">GET mail-service home content</button>
-        <button (click)="clear()">Clear mail-service home content</button>
-        <h2>{{ mailService.title }}</h2>
-        <h3>{{ mailService.header }}</h3>
-        `,
-    providers: [MailServiceHomeService]
+    templateUrl: './app/mail-service/home.component.html',
+    providers: [MailServiceHomeService, HomeJSON]
 })
 export class HomeComponent {
-    mailService = {}
 
-    constructor(private _httpService: MailServiceHomeService) { }
+    constructor(private home: HomeJSON, private _httpService: MailServiceHomeService) {
+    }
 
     getHome() {
         this._httpService.getHome()
             .subscribe(
-            data => this.mailService = data,
+            data => this.home = data,
             error => alert(error),
             () => console.log("Finished")
             );
     }
 
     clear() {
-        this.mailService = {}
+        this.home = new HomeJSON;
+        console.log("Home element cleared");
     }
 }
