@@ -23,12 +23,13 @@ public class Email {
     private void processSendMailForm() {
         this.to = sendMailForm.getTo();
 
+        // set template and subject based on email type
         switch (sendMailForm.getType().toUpperCase()) {
             case EmailConst.RESET_PASSWORD:
                 this.subject = EmailConst.RESET_PASSWORD_MAIL_TOPIC;
                 this.templateName = EmailTemplatesConst.RESET_PASSWORD_EMAIL;
                 break;
-            case EmailConst.REGISTRATION_MAIL_TOPIC:
+            case EmailConst.REGISTRATION:
                 this.subject = EmailConst.REGISTRATION_MAIL_TOPIC;
                 this.templateName = EmailTemplatesConst.REGISTRATION_EMAIL;
                 break;

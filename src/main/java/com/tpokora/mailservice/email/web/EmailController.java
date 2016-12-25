@@ -34,7 +34,7 @@ public class EmailController {
     @Autowired
     private EmailStatusService emailStatusService;
 
-    @RequestMapping(value = "/resetPasswordMail", method = RequestMethod.POST, headers = "Accept=application/json")
+    @RequestMapping(value = "/project-s/sendmail", method = RequestMethod.POST, headers = "Accept=application/json")
     public ResponseEntity<EmailSendStatusResponse> hello(@RequestBody SendMailForm sendMailForm) throws Exception {
         logger.info("Sending email to reset password to: '{}'", sendMailForm.getTo());
 
