@@ -1,0 +1,12 @@
+<div class="jumbotron">
+    <div class="container">
+        <!--<label>Mail:</label> <input #email />
+        <button (click)="add(email.value); email.value=''">Add</button>-->
+        <h2>Mail list - status</h2>
+        <ul class="maillist">
+            <li *ngFor="let mail of _maillist">
+                {{ mail.id }} - {{ mail.email }} - {{ mail.action }} - {{ mail.status }} - {{ mail.date }}
+            </li>
+        </ul>
+    </div>
+</div>
