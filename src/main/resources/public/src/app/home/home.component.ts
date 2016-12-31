@@ -13,6 +13,7 @@ export class HomeComponent implements OnInit {
   constructor(private _home: HomeJSON, private _homeService: HomeService) { }
 
   ngOnInit() {
+    this.getHome();
   }
 
   getHome() {
