@@ -17,7 +17,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
  * Created by pokor on 17.12.2016.
  */
 @Configuration
-@PropertySource("classpath:properties/${env:app}.properties")
+@PropertySource("classpath:properties/${env:dev}.properties")
 public class AppConfig {
 
     @Autowired
