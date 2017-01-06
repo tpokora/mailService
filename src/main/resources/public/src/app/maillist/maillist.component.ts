@@ -18,21 +18,19 @@ export class MaillistComponent implements OnInit {
     this.getMailStatusList();
   }
 
-  // add(email: string): void {
-  //   email = email.trim();
-  //   if (!email) {
-  //     return;
-  //   }
-  //   this.newMail = new Mail();
-  //   this.newMail.email = email;
-  //   this._maillist.push(this.newMail);
-  // }
-
   getMailStatusList(): void {
     console.log('Getting mail list');
     this._mailservice
       .getMailStatusList()
       .then(maillist => this._maillist = maillist);
+  }
+
+  getTableElementStyle(mail: Mail) {
+    if (mail.status === 'SUCCESS') {
+      return 'success';
+    } else {
+      return 'danger';
+    }
   }
 
 }

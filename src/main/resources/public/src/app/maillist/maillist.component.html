@@ -3,10 +3,25 @@
         <!--<label>Mail:</label> <input #email />
         <button (click)="add(email.value); email.value=''">Add</button>-->
         <h2>Mail list - status</h2>
-        <ul class="maillist">
-            <li *ngFor="let mail of _maillist">
-                {{ mail.id }} - {{ mail.email }} - {{ mail.action }} - {{ mail.status }} - {{ mail.date }}
-            </li>
-        </ul>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Email</th>
+                    <th>Date</th>
+                    <th>Action</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let mail of _maillist" [ngClass]="getTableElementStyle(mail)">
+                    <th>{{ mail.id }}</th>
+                    <td>{{ mail.email }}</td>
+                    <td>{{ mail.date }}</td>
+                    <td>{{ mail.action }}</td>
+                    <td>{{ mail.status }}</td>
+                </tr>
+            </tbody>
+        </table>
     </div>
 </div>
