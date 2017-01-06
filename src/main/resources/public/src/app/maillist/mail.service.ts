@@ -14,7 +14,7 @@ export class MailService {
         console.log('Getting mail list in service');
         return this._http.get(this.emailsStatusListUrl)
             .toPromise()
-            .then(response => response.json().data as Mail[])
+            .then(response => response.json() as Mail[])
             .catch(this.handleError);
     }
 
