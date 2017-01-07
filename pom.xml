@@ -79,7 +79,7 @@
                 <version>0.0.26</version>
 
                 <configuration>
-                    <workingDirectory>src/main/resources/public/</workingDirectory>
+                    <workingDirectory>src/main/typescript</workingDirectory>
                 </configuration>
 
                 <executions>
