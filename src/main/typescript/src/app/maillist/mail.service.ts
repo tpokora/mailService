@@ -3,10 +3,11 @@ import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/toPromise';
 import { Mail } from './mail.model';
+import { environment } from '../../environments/environment'
 
 @Injectable()
 export class MailService {
-    private emailsStatusListUrl = 'http://localhost:8080/rest/emailstatus/list';
+    private emailsStatusListUrl = environment.API_URL + '/rest/emailstatus/list';
 
     constructor(private _http: Http) { }
 

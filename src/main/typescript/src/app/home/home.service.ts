@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
+import { environment } from '../../environments/environment'
 
 @Injectable()
 export class HomeService {
@@ -8,7 +9,7 @@ export class HomeService {
 
     getHome() {
         // returns Objectable
-        return this._http.get('http://localhost:8080/rest/home')
+        return this._http.get(environment.API_URL + 'rest/home')
             .map(res => res.json());
     }
 }
