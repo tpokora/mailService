@@ -14,7 +14,7 @@ const appRoutes: Routes = [
   { path: 'maillist', component: MaillistComponent },
   {
     path: '',
-    redirectTo: '/home',
+    redirectTo: 'home',
     pathMatch: 'full'
   }
 ];

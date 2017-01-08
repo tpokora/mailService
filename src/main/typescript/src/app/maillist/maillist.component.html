@@ -14,13 +14,14 @@
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor="let mail of _maillist" [ngClass]="getTableElementStyle(mail)">
+                <tr ng-if="_maillist != null" *ngFor="let mail of _maillist" [ngClass]="getTableElementStyle(mail)">
                     <th>{{ mail.id }}</th>
                     <td>{{ mail.email }}</td>
                     <td>{{ mail.date }}</td>
                     <td>{{ mail.action }}</td>
                     <td>{{ mail.status }}</td>
                 </tr>
+                <th ng-if="_maillist == null" class="text-center row" colspan="5">No email statuses found</th>
             </tbody>
         </table>
     </div>

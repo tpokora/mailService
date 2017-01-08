@@ -9,7 +9,7 @@ import { Mail } from './mail.model';
   providers: [MailService, Mail]
 })
 export class MaillistComponent implements OnInit {
-  _maillist: Mail[] = [];
+  _maillist: Mail[];
   newMail: Mail;
 
   constructor(private _mailservice: MailService) { }

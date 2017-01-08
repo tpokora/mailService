@@ -9,7 +9,7 @@ export class HomeService {
 
     getHome() {
         // returns Objectable
-        return this._http.get(environment.API_URL + 'rest/home')
+        return this._http.get(environment.API_URL + '/rest/home')
             .map(res => res.json());
     }
 }
