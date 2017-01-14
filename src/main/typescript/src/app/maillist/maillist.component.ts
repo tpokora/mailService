@@ -25,6 +25,10 @@ export class MaillistComponent implements OnInit {
       .then(maillist => this._maillist = maillist);
   }
 
+  mailStatusListNull(): boolean {
+    return this._maillist == null ? true : false;
+  }
+
   getTableElementStyle(mail: Mail) {
     if (mail.status === 'SUCCESS') {
       return 'success';

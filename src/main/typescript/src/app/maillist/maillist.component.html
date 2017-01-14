@@ -2,27 +2,28 @@
     <div class="container">
         <!--<label>Mail:</label> <input #email />
         <button (click)="add(email.value); email.value=''">Add</button>-->
-        <h2>Mail list - status</h2>
-        <table class="table">
-            <thead>
-                <tr>
-                    <th>#</th>
-                    <th>Email</th>
-                    <th>Date</th>
-                    <th>Action</th>
-                    <th>Status</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr ng-if="_maillist != null" *ngFor="let mail of _maillist" [ngClass]="getTableElementStyle(mail)">
-                    <th>{{ mail.id }}</th>
-                    <td>{{ mail.email }}</td>
-                    <td>{{ mail.date }}</td>
-                    <td>{{ mail.action }}</td>
-                    <td>{{ mail.status }}</td>
-                </tr>
-                <th ng-if="_maillist == null" class="text-center row" colspan="5">No email statuses found</th>
-            </tbody>
-        </table>
+        <div *ngIf="mailStatusListNull()" class="text-center row" colspan="5">No email statuses found</div>
+        <div *ngIf="!mailStatusListNull()">
+            <table class=" table ">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Email</th>
+                        <th>Date</th>
+                        <th>Action</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let mail of _maillist " [ngClass]="getTableElementStyle(mail) ">
+                        <th>{{ mail.id }}</th>
+                        <td>{{ mail.email }}</td>
+                        <td>{{ mail.date }}</td>
+                        <td>{{ mail.action }}</td>
+                        <td>{{ mail.status }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
 </div>

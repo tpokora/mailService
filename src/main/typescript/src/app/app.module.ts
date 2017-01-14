@@ -9,15 +9,15 @@ import { HomeComponent } from './home/home.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { MaillistComponent } from './maillist/maillist.component';
 
-const appRoutes: Routes = [
-  { path: 'home', component: HomeComponent },
-  { path: 'maillist', component: MaillistComponent },
-  {
-    path: '',
-    redirectTo: 'home',
-    pathMatch: 'full'
-  }
-];
+// const appRoutes: Routes = [
+//   { path: 'home', component: HomeComponent },
+//   { path: 'maillist', component: MaillistComponent },
+//   {
+//     path: '',
+//     redirectTo: 'home',
+//     pathMatch: 'full'
+//   }
+// ];
 
 @NgModule({
   declarations: [
@@ -30,7 +30,7 @@ const appRoutes: Routes = [
     BrowserModule,
     FormsModule,
     HttpModule,
-    RouterModule.forRoot(appRoutes)
+    // RouterModule.forRoot(appRoutes)
   ],
   providers: [],
   bootstrap: [AppComponent]
