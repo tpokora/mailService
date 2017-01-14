@@ -30,7 +30,8 @@
         "html-webpack-plugin": "2.26.0",
         "style-loader": "0.13.1",
         "postcss-loader": "1.2.2",
-        "@ngtools/webpack": "1.2.3"
+        "@ngtools/webpack": "1.2.3",
+        "css-loader": "0.26.1"
     },
     "devDependencies": {
         "@angular/compiler-cli": "^2.3.1",
